@@ -1,13 +1,20 @@
+
 import './App.css';
 import Footer from './componentes/Footer';
 import Header from './componentes/Header';
-import Main from './componentes/Main';
+import Hero from 'componentes/Hero';
+import Hightlights from './componentes/Hightlights';
+import Testimonials from 'componentes/Testimonials';
+import About from 'componentes/About';
 
 function App() {
   return (
     <><Header />
-    <Main>
-    </Main>
+    <Hero></Hero>
+    <Hightlights>
+    </Hightlights>
+    <Testimonials></Testimonials>
+    <About></About>
     <Footer /></>
   )
 }

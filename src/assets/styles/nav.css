@@ -1,0 +1,14 @@
+nav {
+  text-align: center;
+  a {
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    li {
+      padding: 10px;
+      font-size: 10pt;
+    }
+  }
+}

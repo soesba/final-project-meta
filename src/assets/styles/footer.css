@@ -1,0 +1,26 @@
+footer {
+  display: flex;
+  color: var(--secondary-grey);
+  background-color: var(--primary-green);
+  padding: 20px;
+  #logo {
+    content:url('assets/images/footer-logo.png');
+    height: 200px;
+    padding: 20px;
+  }
+  nav {
+    padding: 5px;
+    text-align: left;
+    ul {
+      text-align: justify;
+      display: flex;
+      flex-direction: column;
+      li {
+        padding: 2px;
+        a {
+          color: var(--secondary-grey);
+        }
+      }
+    }
+  }
+}

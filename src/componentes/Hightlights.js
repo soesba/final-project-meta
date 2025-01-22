@@ -1,7 +1,8 @@
 function Main() {
   return (
-    <main>
-    </main>
+    <aside>
+      Hightlights section
+    </aside>
   );
 }
 

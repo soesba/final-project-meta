@@ -1,3 +1,4 @@
+import 'assets/styles/nav.css';
 
 function Nav() {
   return (
