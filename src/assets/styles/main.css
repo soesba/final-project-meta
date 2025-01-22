@@ -1,0 +1,16 @@
+section {
+  padding: 0 20px;
+}
+section.hero-section {
+  margin: 0 auto;
+  background-color: var(--primary-green);
+  color: var(--secondary-grey);
+  .title {
+    color: var(--primary-yellow);
+  }
+}
+
+section.testimonials-section {
+  background-color: var(--primary-green);
+  color: var(--secondary-grey);
+}

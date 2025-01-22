@@ -7,7 +7,6 @@
 
 * {
   font-family: 'Karla', sans-serif;
-  font-size: 16pt;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,15 +15,42 @@
 .title {
   font-family: var(--font-markazi);
   font-size: 64pt;
+  font-weight: 500;
+}
+
+.subtitle {
+  font-family: var(--font-markazi);
+  font-size: 40pt;
+}
+
+.body-text {
+  font-family: var(--font-karla);
+  font-weight: 500;
+  font-size: 18pt;
 }
 
 .section-title {
+  font-family: var(--font-karla);
   font-size: 20pt;
   font-weight: bolder;
 }
+
 .card-title {
+  font-family: var(--font-karla);
   font-size: 18pt;
   font-weight: bold;
+}
+
+.paragraph {
+  font-family: var(--font-karla);
+  font-size: 16pt;
+  font-weight: 400;
+}
+
+.higthlight {
+  font-family: var(--font-karla);
+  font-size: 16pt;
+  font-weight: 500;
 }
 
 #root {
@@ -32,9 +58,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 20px;
 }
 
 a {
   color: var(--secondary-dark);
+}
+
+header .container,
+section .container {
+  margin: 0 auto;
+  max-width: 1160px;
 }
