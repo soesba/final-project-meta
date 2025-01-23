@@ -21,6 +21,7 @@
 .subtitle {
   font-family: var(--font-markazi);
   font-size: 40pt;
+  font-weight: 400;
 }
 
 .body-text {
@@ -65,7 +66,31 @@ a {
 }
 
 header .container,
+footer .container,
 section .container {
   margin: 0 auto;
   max-width: 1160px;
+}
+
+button {
+  border-radius: 16px;
+  height: 50px;
+  width: max-content;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  &.primary {
+    background-color: var(--primary-yellow);
+    color: var(--primary-green);
+    font-size: 16pt;
+    font-weight: bold;
+    &:hover {
+      opacity: 70%;
+      box-shadow: 3px 3px 6px #000000;
+    }
+    &:active {
+      transform: scale(0.95);
+    }
+  }
 }

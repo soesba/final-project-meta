@@ -1,6 +1,7 @@
 section {
-  padding: 0 20px;
+  padding: 0 1%;
 }
+
 section.hero-section {
   margin: 0 auto;
   background-color: var(--primary-green);
@@ -8,9 +9,52 @@ section.hero-section {
   .title {
     color: var(--primary-yellow);
   }
+  .wrapper-button {
+    display: flex;
+    flex: 2;
+    align-items: center;
+  }
+}
+
+section.highlights-section {
+  margin: 0 auto;
+  margin-top: 50px;
+  color: var(--primary-green);
+  .wrapper-title {
+    flex: 1;
+  }
+  .wrapper-button {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    margin-right: 50px;
+  }
 }
 
 section.testimonials-section {
   background-color: var(--primary-green);
   color: var(--secondary-grey);
+}
+.container {
+  display: flex;
+}
+
+.wrapper-text {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 50%;
+}
+
+.wrapper-image {
+  display: flex;
+  height: 400px;
+  flex: 1 1 50%;
+  overflow: visible;
+  margin: 40px 0 -40px 0;
+  justify-content: flex-end;
+  .img-portada {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+  }
 }
