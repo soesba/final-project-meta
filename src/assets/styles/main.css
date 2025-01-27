@@ -84,6 +84,26 @@ section.testimonials-section {
     width: auto;
   }
 }
+
+section.about-section {
+  padding: 20px;
+  color: var(--primary-green);
+  .wrapper-text {
+    flex: 1;
+  }
+  .img-restaurant {
+    width: 300px;
+    height: auto;
+    border-radius: 16px;
+    &:first-child {
+      position: relative;
+      top: 70px;
+      left: 70px;
+      z-index: 50;
+    }
+  }
+}
+
 .container {
   display: flex;
 }

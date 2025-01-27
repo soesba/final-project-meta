@@ -18,19 +18,19 @@ function renderStars(rating, maxStars = 5) {
   const arrayFullStars = Array.from(
     { length: fullStars },
     (_, i) => (
-      <img key={i} src={getStar('full')} alt='rate' className='rate-star'/>
+      <img key={i + '_full'} src={getStar('full')} alt='rate' className='rate-star'/>
     )
   );
   const arrayHalfStars = Array.from(
     { length: halfStar },
     (_, i) => (
-      <img key={i} src={getStar('half')} alt='rate' className='rate-star'/>
+      <img key={i + '_half'} src={getStar('half')} alt='rate' className='rate-star'/>
     )
   );
   const arrayEmptyStars = Array.from(
     { length: emptyStars },
     (_, i) => (
-      <img key={i} src={getStar('empty')} alt='rate' className='rate-star'/>
+      <img key={i + '_empty'} src={getStar('empty')} alt='rate' className='rate-star'/>
     )
   );
   return arrayFullStars.concat(arrayHalfStars).concat(arrayEmptyStars);
