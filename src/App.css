@@ -34,6 +34,7 @@
   font-family: var(--font-karla);
   font-size: 20pt;
   font-weight: bolder;
+  text-transform: uppercase;
 }
 
 .card-title {

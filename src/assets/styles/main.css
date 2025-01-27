@@ -1,5 +1,5 @@
 section {
-  padding: 0 1%;
+  padding: 0 20px;
 }
 
 section.hero-section {
@@ -13,6 +13,31 @@ section.hero-section {
     display: flex;
     flex: 2;
     align-items: center;
+    padding: 20px 0px;
+  }
+
+  .wrapper-text {
+    display: flex;
+    flex-direction: column;
+    p {
+      max-width: 70%;
+    }
+  }
+
+  .wrapper-image {
+    display: flex;
+    flex: 1;
+    height: 400px;
+    overflow: visible;
+    margin: 40px 0 -40px 0;
+    justify-content: flex-end;
+    .img-portada {
+      height: 100%;
+      width: 40vw;
+      max-width: 400px;
+      object-fit: cover;
+      border-radius: 16px;
+    }
   }
 }
 
@@ -20,41 +45,53 @@ section.highlights-section {
   margin: 0 auto;
   margin-top: 50px;
   color: var(--primary-green);
-  .wrapper-title {
-    flex: 1;
+  .container {
+    flex-direction: column;
+    .wrapper-cabecera {
+      display: flex;
+      flex-direction: row;
+      .title {
+        flex: 2;
+      }
+      .button {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+        margin-right: 10%;
+      }
+    }
   }
-  .wrapper-button {
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
-    margin-right: 50px;
   }
-}
 
 section.testimonials-section {
+  padding-top: 20px;
   background-color: var(--primary-green);
   color: var(--secondary-grey);
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    .section-title {
+      text-align: center;
+    }
+    .lista-cards {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+  .rate-star {
+    height: 16px;
+    width: auto;
+  }
 }
 .container {
   display: flex;
 }
 
-.wrapper-text {
-  display: flex;
-  flex-direction: column;
-  flex: 0 1 50%;
-}
-
-.wrapper-image {
-  display: flex;
-  height: 400px;
-  flex: 1 1 50%;
-  overflow: visible;
-  margin: 40px 0 -40px 0;
-  justify-content: flex-end;
-  .img-portada {
-    height: 100%;
-    object-fit: cover;
-    border-radius: 16px;
+@media (max-width: 750px) {
+  section.hero-section {
+    .wrapper-image {
+      width: 40%;
+    }
   }
 }

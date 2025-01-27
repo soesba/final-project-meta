@@ -1,0 +1,63 @@
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  padding: 10px;
+  border-radius: 16px;
+  background-color: var(--secondary-grey);
+  color: var(--primary-green);
+  margin: 15px;
+
+  .rating {
+    color: var(--primary-yellow);
+    text-align: center;
+  }
+  
+  .person {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .name {
+      padding-left: 10px;
+    }
+  }
+  img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+  }
+  .content {
+    padding: 20px;
+    max-height: 115px;
+    min-height: 115px;
+  }
+  .footer {
+    padding: 20px;
+    .div-link {
+      display: flex;
+      align-items: center;
+      &:after {
+        content: '';
+        display: inline-block;
+        background-image: url('assets/images/delivery-icon.png');
+        object-fit: cover;
+        background-size: 32px;
+        background-repeat: no-repeat;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        width: 32px;
+        height: 32px;
+        position: relative;
+        right: -40%;
+      }
+    }
+    img {
+      
+      object-fit: cover;
+      height: 32px;
+      
+    }
+  }
+}

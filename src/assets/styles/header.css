@@ -10,7 +10,7 @@ header {
     .wrapper-logo {
       justify-self: flex-start;
       #logo {
-        content:url('assets/images/Logo.svg');
+        content: url('assets/images/Logo.svg');
       }
     }
     
@@ -18,7 +18,7 @@ header {
       justify-self: flex-end;
       #icon_menu {
         display: none;    
-        content:url('assets/images/icon_hamburger_menu.svg');
+        content: url('assets/images/icon_hamburger_menu.svg');
       }
 
       nav {
