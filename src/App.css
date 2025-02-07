@@ -5,67 +5,6 @@
 }
   */
 
-* {
-  font-family: 'Karla', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.title {
-  font-family: var(--font-markazi);
-  font-size: 64pt;
-  font-weight: 500;
-}
-
-.subtitle {
-  font-family: var(--font-markazi);
-  font-size: 40pt;
-  font-weight: 400;
-}
-
-.body-text {
-  font-family: var(--font-karla);
-  font-weight: 500;
-  font-size: 18pt;
-}
-
-.section-title {
-  font-family: var(--font-karla);
-  font-size: 20pt;
-  font-weight: bolder;
-  text-transform: uppercase;
-}
-
-.card-title {
-  font-family: var(--font-karla);
-  font-size: 18pt;
-  font-weight: bold;
-}
-
-.paragraph {
-  font-family: var(--font-karla);
-  font-size: 16pt;
-  font-weight: 400;
-}
-
-.higthlight {
-  font-family: var(--font-karla);
-  font-size: 16pt;
-  font-weight: 500;
-}
-
-#root {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-a {
-  color: var(--secondary-dark);
-}
-
 header .container,
 footer .container,
 section .container {

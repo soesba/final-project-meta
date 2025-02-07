@@ -19,9 +19,9 @@ function Footer () {
         <nav>
           <label className="card-title">Contact</label>
           <ul>
-            <li>Address</li>
-            <li>Phone number</li>
-            <li>Email</li>
+            <li>123 Ford Blvd, Chicago, IL, 60618</li>
+            <li>+1(123)456-7890</li>
+            <li>info@littlelemon.com</li>
           </ul>
         </nav>
         <nav>
@@ -29,6 +29,7 @@ function Footer () {
           <ul>
             <li>Instagram</li>
             <li>Facebook</li>
+            <li>Twitter</li>
           </ul>
         </nav>
         </div>

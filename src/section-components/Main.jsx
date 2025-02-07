@@ -1,7 +1,7 @@
 import 'assets/styles/main.css';
 import SectionAbout from './SectionAbout';
 import SectionHero from './SectionHero';
-import SectionTestimonials from './SectionTestimonials';
+import SectionTestimonials from './SectionTestimonials.jsx';
 import SectionHighlights from './SectionHighlights';
 
 function Main () {
