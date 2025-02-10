@@ -1,0 +1,1 @@
+setupFilesAfterEnv: ['<rootDir>/setupTest.jsx']

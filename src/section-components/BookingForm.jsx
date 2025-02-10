@@ -2,7 +2,6 @@ import 'assets/styles/booking-form.css';
 import { useState } from 'react';
 
 const BookingForm = (props) => {
-  console.log('LOG~ ~ BookingForm ~ fechasDisponibles:', props)
   const [name, setName] = useState("");
   const [time, setTime] = useState("");
   const [guestNo, setGuestNo] = useState("1"); 
@@ -18,6 +17,9 @@ const BookingForm = (props) => {
   const options = () => {
     const listTimes  = ['Seleccione hora', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00']
     return listTimes.map(item => {
+      if (!props.reservedTimes) {
+        return <option key={item}>{ item }</option>
+      }
       return <option key={item} disabled={props.reservedTimes.includes(item)}>{ item }</option>
     });
   }
@@ -30,7 +32,7 @@ const BookingForm = (props) => {
     e.preventDefault()
     console.log("Reservar!!!!")
     const reserva = {
-      name: name,
+      nombre: name,
       dia: date,
       hora: time,
       comensales: guestNo,
@@ -41,6 +43,10 @@ const BookingForm = (props) => {
   }
 
   return (
+    <>
+    <div className="wrapper-text">
+    <h2 data-testid="title" className="subtitle">Reservar</h2>
+  </div>
   <form id="booking-form" onSubmit={handleSubmit}>
     <label htmlFor="res-name">Nombre y apellidos</label>
       <input
@@ -95,6 +101,7 @@ const BookingForm = (props) => {
       </select>
       <input type="submit" value="Reservar" disabled={!formValid()}/>
     </form>
+    </>
   )
 }
 

@@ -9,6 +9,7 @@ import Inicio from 'pages/Inicio';
 import AcercaDe from 'pages/AcercaDe';
 import BookingPage from 'pages/BookingPage';
 import MiReserva from 'pages/MiReserva';
+import { initializeTimes, updateTimes } from 'utils/Functions';
 
 const reducerHandleChanges = (state, action) => {
   console.log('LOG~ ~ handleChanges ~ state, action:', state, action)
@@ -36,14 +37,12 @@ const reducerHandleChanges = (state, action) => {
   }
 }
 
+
+
 function App() {
   const navigate = useNavigate();
  
-  const [state, handleChanges] = useReducer(reducerHandleChanges, { reservas: [], diaSeleccionado: Intl.DateTimeFormat('en-CA', {formatString: 'yyyy-mm-dd'}).format(new Date())});
-
-  const getHorasReservadas = () => {
-    return state.reservas.filter(item => item.dia === state.diaSeleccionado).map(item => item.hora)
-  }
+  const [state, handleChanges] = useReducer(reducerHandleChanges, initializeTimes());
 
   useEffect(() => {
     navigate("mireserva");
@@ -56,12 +55,12 @@ function App() {
       <Route exact path="acercade" element={<AcercaDe />}/>
       <Route exact path="reserva" element={
           <BookingPage 
-            reservedTimes={ getHorasReservadas() }
+            reservedTimes={ updateTimes(state) }
             handleChanges={(e) => handleChanges(e)}
           />
         }
         />
-      <Route exact path="mireserva" element={<MiReserva reservas={ state.reservas } />}/>
+      <Route exact path="mireserva" element={<MiReserva reserva={ state.reservas[state.reservas.length - 1] } />}/>
     </Routes>
     <Footer /></>
   )

@@ -108,12 +108,40 @@ section.acercade-section {
   }
 }
 
+section.reserva-section {
+  padding: 20px;
+  color: var(--primary-green);
+  .wrapper-text {
+    flex: 1;
+    text-align: center;
+  }
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 section.mireserva-section {
   padding: 20px;
   color: var(--primary-green);
   .wrapper-text {
     flex: 1;
+    text-align: center;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .datos-reserva {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    div {
+      padding: 5px;
+    }
+    .color {
+      background-color: var(--primary-green);
+      color: var(--secondary-grey);
+    }
   }
 }
 
