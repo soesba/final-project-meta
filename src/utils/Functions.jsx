@@ -1,7 +1,12 @@
-export const initializeTimes = () => {
-  return { reservas: [], diaSeleccionado: Intl.DateTimeFormat('en-CA', {formatString: 'yyyy-mm-dd'}).format(new Date())}
+import { fetchAPI, submitAPI } from 'BookingAPI'
+
+export const initializeTimes = (date) => {
+  return { freeTimes: fetchAPI(date)}
 }
 
-export const updateTimes = (state) => {
-  return state.reservas.filter(item => item.dia === state.diaSeleccionado).map(item => item.hora)
+export const updateTimes = (freeTimes, data) => {
+  console.log('LOG~ ~ submitAPI ~ formData:', data)
+  freeTimes.splice(freeTimes.findIndex(item => item === data.hora), 1)
+  const ok = submitAPI(data)
+  return {freeTimes, ok}
 }

@@ -8,59 +8,55 @@ import Header from './section-components/Header';
 import Inicio from 'pages/Inicio';
 import AcercaDe from 'pages/AcercaDe';
 import BookingPage from 'pages/BookingPage';
-import MiReserva from 'pages/MiReserva';
+import ConfirmedBooking  from 'pages/ConfirmedBooking ';
 import { initializeTimes, updateTimes } from 'utils/Functions';
 
 const reducerHandleChanges = (state, action) => {
-  console.log('LOG~ ~ handleChanges ~ state, action:', state, action)
   switch (action.type) {
-    case 'cambiar_fecha':
-      return {
-        ...state,
-        diaSeleccionado: action.dia
-      }
-    case 'reservar': {
-        const existeReserva = state.reservas.find(item => item.dia === action.dia)
-        if (!existeReserva) {
-          console.log('Añadimos reserva')
-          return {
-            ...state,
-            reservas: [
-              ...state.reservas,
-              action.reserva
-            ]
-          }
+    case 'cambiar_fecha': {
+        const horasLibres = initializeTimes(action.dia)
+        return {
+          freeTimes: horasLibres.freeTimes
         }
       }
-      break
+    case 'reservar': {
+      console.log('Añadimos reserva', action.reserva)
+      const result = updateTimes(state.freeTimes, action.reserva)
+      return {
+        freeTimes: result.freeTimes,
+        reservaOk: result.ok,
+        reserva: action.reserva
+      }
+    }
     default:
   }
 }
 
-
-
 function App() {
   const navigate = useNavigate();
+  const today = Intl.DateTimeFormat('en-CA', {formatString: 'yyyy-mm-dd'}).format(new Date())
  
-  const [state, handleChanges] = useReducer(reducerHandleChanges, initializeTimes());
+  const [state, handleChanges] = useReducer(reducerHandleChanges, initializeTimes(today));
 
   useEffect(() => {
-    navigate("mireserva");
-  }, [state.reservas.length]);
+    if (state.reservaOk) {
+      navigate("confirmedBooking");
+    }
+  }, [state.reservaOk, navigate]);
 
   return (
     <><Header />
     <Routes>
-      <Route index path="/" element={<Inicio />}/>
+      <Route index path="" element={<Inicio />}/>
       <Route exact path="acercade" element={<AcercaDe />}/>
       <Route exact path="reserva" element={
           <BookingPage 
-            reservedTimes={ updateTimes(state) }
+            freeTimes={ state.freeTimes }
             handleChanges={(e) => handleChanges(e)}
           />
         }
         />
-      <Route exact path="mireserva" element={<MiReserva reserva={ state.reservas[state.reservas.length - 1] } />}/>
+      <Route exact path="confirmedBooking" element={<ConfirmedBooking  reserva={ state.reserva } />}/>
     </Routes>
     <Footer /></>
   )

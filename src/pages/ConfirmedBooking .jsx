@@ -1,11 +1,9 @@
-const MiReserva = (props) => {
+const ConfirmedBooking = (props) => {
   console.log('LOG~ ~ MiReserva ~ props:', props)
   const getReserva = () => {
     if (props.reserva) {
       return (
         <div className='datos-reserva'>
-          <div className='color nombre'>Nombre:</div>
-          <div className='nombre'>{props.reserva.nombre || props.reserva.name}</div>
           <div className='color dia'>Día:</div>
           <div className='dia'>{Intl.DateTimeFormat('es-ES', {formatString: 'dd/mm/YYYY'}).format(new Date(props.reserva.dia))}</div>
           <div className='color hora'>Hora:</div>
@@ -38,4 +36,4 @@ const MiReserva = (props) => {
 
 }
 
-export default MiReserva
+export default ConfirmedBooking

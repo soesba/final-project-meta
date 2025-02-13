@@ -1,1 +1,1 @@
-setupFilesAfterEnv: ['<rootDir>/setupTest.jsx']
+setupFilesAfterEnv: ['<rootDir>/setupTest.jsx', "@testing-library/jest-dom/extend-expect"]
