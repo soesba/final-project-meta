@@ -131,6 +131,7 @@ const BookingForm = (props) => {
     <h2 data-testid="title" className="subtitle">Reservar</h2>
   </div>
   <form id="booking-form" onSubmit={handleSubmit}>
+    <div className='row'>
       <label htmlFor="res-date">Día reserva</label>
       <input
         type="date"
@@ -141,6 +142,8 @@ const BookingForm = (props) => {
         onChange={handleInputChanges}
       />
       { errorMessages['res-date'] && <p id="error-res-date" data-testid="error-res-date" className='error-msg'>{errorMessages['res-date']}</p> }
+      </div>
+      <div className='row'>
       <label htmlFor="res-time">Hora reserva</label>
       <select
         id="res-time"
@@ -152,6 +155,8 @@ const BookingForm = (props) => {
           { timeOptions() }
       </select>
       { errorMessages['res-time'] && <p id="error-res-time" data-testid="error-res-time" className='error-msg'>{errorMessages['res-date']}</p> }
+      </div>
+      <div className='row'>
       <label htmlFor="res-guests">Número de comensales</label>
       <input
         type="number"
@@ -165,6 +170,8 @@ const BookingForm = (props) => {
         onChange={handleInputChanges}
       />
       { errorMessages['res-guests'] && <p id="error-res-guests" data-testid="error-res-guests" className='error-msg'>{errorMessages['res-date']}</p> }
+      </div>
+      <div className='row'>
       <label htmlFor="res-occasion">Ocasión</label>
       <select
         id="res-occasion"
@@ -175,7 +182,10 @@ const BookingForm = (props) => {
         { occasionOptions() }
       </select>
       { errorMessages['res-occasion'] && <p id="error-res-occasion" data-testid="error-res-occasion" className='error-msg'>{errorMessages['res-date']}</p> }
-      <input data-testid="btnSubmit" type="submit" value="Reservar" disabled={!formValid()} aria-label="On Click"/>
+      </div>
+      <div className='row button'>
+        <input data-testid="btnSubmit" type="submit" value="Reservar" disabled={!formValid()} aria-label="On Click"/>
+      </div>
     </form>
     </>
   )

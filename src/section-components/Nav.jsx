@@ -6,7 +6,7 @@ function Nav() {
     <nav>
       <ul>
         <li><Link to='/'>Inicio</Link></li>
-        <li><Link to='/acercade'>Acerca de</Link></li>
+        <li><Link to='acercade'>Acerca de</Link></li>
         <li><a href='pages/Menu'>Menú</a></li>
         <li><Link to='reserva'>Reservas</Link></li>
         <li><a href='pages/PedidosOnline'>Pedidos en línea</a></li>

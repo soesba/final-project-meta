@@ -40,23 +40,24 @@ function App() {
 
   useEffect(() => {
     if (state.reservaOk) {
-      navigate("confirmedBooking");
+      state.reservaOk = false
+      navigate("/confirmedBooking");
     }
   }, [state.reservaOk, navigate]);
 
   return (
     <><Header />
     <Routes>
-      <Route index path="" element={<Inicio />}/>
-      <Route exact path="acercade" element={<AcercaDe />}/>
-      <Route exact path="reserva" element={
+      <Route index path="/" element={<Inicio />}/>
+      <Route path="/acercade" element={<AcercaDe />}/>
+      <Route path="/reserva" element={
           <BookingPage 
             freeTimes={ state.freeTimes }
             handleChanges={(e) => handleChanges(e)}
           />
         }
         />
-      <Route exact path="confirmedBooking" element={<ConfirmedBooking  reserva={ state.reserva } />}/>
+      <Route path="/confirmedBooking" element={<ConfirmedBooking  reserva={ state.reserva } />}/>
     </Routes>
     <Footer /></>
   )

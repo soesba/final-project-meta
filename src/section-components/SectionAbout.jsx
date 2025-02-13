@@ -2,7 +2,7 @@ const founders1 = require('assets/images/Mario and Adrian A.jpg')
 const founders2 = require('assets/images/Mario and Adrian b.jpg')
 function SectionAbout() {
   return (
-    <section className='about-section'>
+    <section className='acercade-section'>
       <div className='container'>
       <div className='wrapper-text'>
           <h1 className='title'>Little Lemon</h1>

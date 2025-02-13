@@ -1,17 +1,24 @@
 const ConfirmedBooking = (props) => {
-  console.log('LOG~ ~ MiReserva ~ props:', props)
   const getReserva = () => {
     if (props.reserva) {
       return (
         <div className='datos-reserva'>
-          <div className='color dia'>Día:</div>
-          <div className='dia'>{Intl.DateTimeFormat('es-ES', {formatString: 'dd/mm/YYYY'}).format(new Date(props.reserva.dia))}</div>
-          <div className='color hora'>Hora:</div>
-          <div className='hora'>{props.reserva.hora}</div>
-          <div className='color comensales'>Nº comensales:</div>
-          <div className='comensales'>{props.reserva.comensales}</div>
-          <div className='color ocasion'>Ocasión:</div>
-          <div className='ocasion'>{props.reserva.ocasion}</div>
+          <div className='row'>
+            <label className='color'>Día:</label>
+            <label>{Intl.DateTimeFormat('es-ES', {formatString: 'dd/mm/YYYY'}).format(new Date(props.reserva.dia))}</label>
+          </div>
+          <div className='row'>
+            <label className='color'>Hora:</label>
+            <label>{props.reserva.hora}</label>
+          </div>
+          <div className='row'>
+            <label className='color'>Nº comensales:</label>
+            <label>{props.reserva.comensales}</label>
+          </div>
+          <div className='row'>
+            <label className='color'>Ocasión:</label>
+            <label>{props.reserva.ocasion}</label>
+          </div>
         </div>
       )
     } else {
