@@ -13,6 +13,12 @@ import { initializeTimes, updateTimes } from 'utils/Functions';
 
 const reducerHandleChanges = (state, action) => {
   switch (action.type) {
+    case 'init': {
+      return {
+        ...state,
+        reservaOk: false
+      }
+    }
     case 'cambiar_fecha': {
         const horasLibres = initializeTimes(action.dia)
         return {
@@ -40,7 +46,7 @@ function App() {
 
   useEffect(() => {
     if (state.reservaOk) {
-      state.reservaOk = false
+      handleChanges({ type: 'init' })
       navigate("/confirmedBooking");
     }
   }, [state.reservaOk, navigate]);

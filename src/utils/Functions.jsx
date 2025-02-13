@@ -1,7 +1,7 @@
 import { fetchAPI, submitAPI } from 'BookingAPI'
 
 export const initializeTimes = (date) => {
-  return { freeTimes: fetchAPI(date)}
+  return { freeTimes: fetchAPI(date), reservaOk: false}
 }
 
 export const updateTimes = (freeTimes, data) => {
