@@ -85,14 +85,15 @@ test('res-occasion debería tener estado válido', () => {
 
 test('res-date con fecha de ayer debería tener estado inválido', () => {
   const mockOnChange = jest.fn();
-  render(<BookingForm onChange={mockOnChange} />);
-  const input = screen.getByTestId("res-date");
+  render(<BookingForm handleChanges={mockOnChange} />);
+  const input = screen.getByLabelText(/Día reserva/i);
   // Asignar una fecha anterior a hoy al input de tipo date
   const fechaAnterior = new Date();
   fechaAnterior.setDate(fechaAnterior.getDate() - 1);
   const fechaAnteriorStr = fechaAnterior.toISOString().split('T')[0];
   // Asignar valor al input
   fireEvent.change(input, { target: { value: fechaAnteriorStr } });
-  // Verificar que hay mensaje de error, esta mierda no funciona
-  expect(screen.getByTestId("error-res-date")).toBeInTheDocument();
+  // Verificar que hay mensaje de error
+  const errorMessage = screen.queryByText(/La fecha no puede ser anterior a la fecha actual/i)
+  expect(errorMessage).toBeInTheDocument();
 });

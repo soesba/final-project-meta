@@ -77,6 +77,7 @@ section.testimonials-section {
       display: flex;
       flex-direction: row;
       justify-content: center;
+      flex-wrap: wrap;
     }
   }
   .rate-star {
@@ -88,6 +89,9 @@ section.testimonials-section {
 section.acercade-section {
   padding: 20px;
   color: var(--primary-green);
+  .container {
+    flex-wrap: wrap;
+  }
   .wrapper-text {
     flex: 1;
   }
@@ -164,8 +168,26 @@ section.mireserva-section {
 
 @media (max-width: 750px) {
   section.hero-section {
+    .container {
+      flex-wrap: wrap;
+    }
     .wrapper-image {
-      width: 40%;
+      justify-content: center;
+      .img-portada {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+  section.acercade-section {
+    .wrapper-image {
+      flex: 1 1;
+      .img-restaurant {
+        padding: 10px;
+        &:first-child {
+          position: static;
+        }
+      }
     }
   }
 }

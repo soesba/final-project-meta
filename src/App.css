@@ -5,19 +5,10 @@
 }
   */
 
-select:focus {
-  outline: none; 
-}
 
 .error-msg {
   font-size: 0.8rem;
   color: red;
-}
-
-:is(input, textarea, select):invalid {
-  border-color: red;
-  border-width: 1px;
-  border-style: solid;
 }
 
 header .container,
@@ -27,83 +18,3 @@ section .container {
   max-width: 1160px;
 }
 
-/* ESTILOS COMPONENTES */
-
-button {
-  border-radius: 16px;
-  height: 50px;
-  width: max-content;
-  outline: none;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  &.primary {
-    background-color: var(--primary-yellow);
-    color: var(--primary-green);
-    font-size: 16pt;
-    font-weight: bold;
-    &:hover {
-      opacity: 70%;
-      box-shadow: 3px 3px 6px #000000;
-    }
-    &:active {
-      transform: scale(0.95);
-    }
-  }
-}
-input[type="submit"] {
-  border-radius: 16px;
-  width: 300px;
-  height: 50px;
-  outline: none;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  background-color: var(--primary-yellow);
-  color: var(--primary-green);
-  &:hover:not(:disabled) {
-    opacity: 70%;
-    box-shadow: 3px 3px 6px #000000;
-  }
-  &:active {
-    transform: scale(0.95);
-  }
-  &:disabled {
-    background-color: #C6C6C6;
-    cursor: default;
-  }
-}
-
-select {
-  padding: 5px;
-  width: 300px;
-  height: 50px;
-  border-radius: 5px;
-  border: none;
-  background-color: var(--secondary-grey);
-  color: var(--primary-green);
-  font-size: 14px;
-  font-weight: 700;
-  option {
-    border: none;
-    background-color: var(--secondary-grey);
-    color: var(--primary-green);
-    font-size: 14px;
-    font-weight: 700;
-    &:disabled {
-      color: #C6C6C6;
-    }
-  }
-}
-
-input {
-  padding: 5px;
-  width: 300px;
-  height: 50px;
-  border-radius: 5px;
-  border: none;
-  background-color: var(--secondary-grey);
-  color: var(--primary-green);
-  font-size: 14px;
-  font-weight: 700;
-}

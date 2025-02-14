@@ -1,15 +1,20 @@
 import BookingForm from 'section-components/BookingForm';
+import PropTypes from 'prop-types';
 
-const BookingPage = (props) => {
+const BookingPage =  ({ freeTimes, handleChanges }) => {
   return (
     <section className='reserva-section'>
       <div className='container'>
         <BookingForm
-          freeTimes={props.freeTimes} 
-          handleChanges={(e) => props.handleChanges(e)}></BookingForm>
+          freeTimes={freeTimes} 
+          handleChanges={(e) => handleChanges}></BookingForm>
       </div>
     </section>
   )
 }
+BookingPage.propTypes = {
+  freeTimes: PropTypes.array,
+  handleChanges: PropTypes.func
+};
 
 export default BookingPage;

@@ -59,7 +59,7 @@ function App() {
       <Route path="/reserva" element={
           <BookingPage 
             freeTimes={ state.freeTimes }
-            handleChanges={(e) => handleChanges(e)}
+            handleChanges={(e) => handleChanges}
           />
         }
         />

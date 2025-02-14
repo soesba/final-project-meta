@@ -1,9 +1,10 @@
 import 'assets/styles/booking-form.css';
 import { getAllTimes } from 'BookingAPI';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-const BookingForm = (props) => {
-  // console.log('LOG~ ~ BookingForm ~ props:', props)
+const BookingForm = ({ freeTimes, handleChanges }) => {
+  console.log('LOG~ ~ BookingForm ~ freeTimes, handleChanges:', freeTimes, handleChanges)
   const today = Intl.DateTimeFormat('en-CA', {formatString: 'yyyy-mm-dd'}).format(new Date())
   const [time, setTime] = useState("0");
   const [guestNo, setGuestNo] = useState("1"); 
@@ -11,10 +12,9 @@ const BookingForm = (props) => {
   const [date, setDate ] = useState(today)
   const [errorMessages, setErrorMessages] = useState({})
 
-
   const changeDate = (value) => {
     setDate(value)
-    props.handleChanges({ type: 'cambiar_fecha', dia: value })
+    handleChanges({ type: 'cambiar_fecha', dia: value })
   }
 
   const timeOptions = () => {
@@ -23,10 +23,10 @@ const BookingForm = (props) => {
       if (index === 0) {
         return <option key={index} value={index} disabled hidden>{ item }</option>
       } else {
-        if (!props.freeTimes) {
+        if (!freeTimes) {
           return <option key={index} value={index}>{ item }</option>
         }
-        return <option key={index} value={index} disabled={!props.freeTimes.includes(item)}>{ item }</option>
+        return <option key={index} value={index} disabled={!freeTimes.includes(item)}>{ item }</option>
       }
     });
   }
@@ -58,7 +58,7 @@ const BookingForm = (props) => {
       ocasion: resOccasion.options[resOccasion.selectedIndex].text
     }
     // console.log(reserva)
-    props.handleChanges({ type: 'reservar', reserva: reserva })
+    handleChanges({ type: 'reservar', reserva: reserva })
   }
 
   const validate = (field, value) => {
@@ -190,5 +190,10 @@ const BookingForm = (props) => {
     </>
   )
 }
+
+BookingForm.propTypes = {
+  freeTimes: PropTypes.array,
+  handleChanges: PropTypes.func
+};
 
 export default BookingForm;
