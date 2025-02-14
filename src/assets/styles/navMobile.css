@@ -1,0 +1,29 @@
+nav#nav-mobile {
+  button {
+    background-color: transparent;
+    height: max-content;
+  }
+  #icon-menu {
+    &.close {
+      content: url('assets/images/icon_hamburger_menu.svg');
+    }
+    &.open {
+      content: url('assets/images/close_icon.svg');
+      object-fit: cover;
+    }
+  }
+  .menu-mobile {
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    width: 90%;
+    overflow:auto;
+    background-color: var(--primary-yellow);
+    color: var(--secondary-green);
+    border-radius: 5px;
+    ul {
+      flex-direction: column;
+      text-align: justify;
+    }
+  }
+}

@@ -5,6 +5,7 @@ footer {
   .container {
     justify-content: space-between;
   }
+
   #logo {
     content:url('assets/images/footer-logo.png');
     height: 200px;
@@ -23,6 +24,21 @@ footer {
           color: var(--secondary-grey);
         }
       }
+    }
+  }
+  
+}
+@media (max-width: 750px) {
+  #navigation-section,
+  #contact-section {
+    display: none;
+  }
+  footer {
+    #logo {
+      height: 150px;
+    }
+    &.no-visible {
+      visibility: hidden;
     }
   }
 }

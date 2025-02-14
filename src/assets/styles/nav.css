@@ -6,6 +6,10 @@ nav {
   ul {
     list-style: none;
     display: flex;
+    a {
+      font-weight: 700;
+      font-size: 16px;
+    }
     li {
       padding: 10px;
       font-size: 10pt;

@@ -1,6 +1,6 @@
 
 import './App.css';
-import { useEffect, useReducer } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router';
 
 import Footer from './section-components/Footer';
@@ -10,6 +10,7 @@ import AcercaDe from 'pages/AcercaDe';
 import BookingPage from 'pages/BookingPage';
 import ConfirmedBooking  from 'pages/ConfirmedBooking ';
 import { initializeTimes, updateTimes } from 'utils/Functions';
+import { useLocation } from '../node_modules/react-router/dist/development/index';
 
 const reducerHandleChanges = (state, action) => {
   switch (action.type) {
@@ -43,6 +44,7 @@ function App() {
   const today = Intl.DateTimeFormat('en-CA', {formatString: 'yyyy-mm-dd'}).format(new Date())
  
   const [state, handleChanges] = useReducer(reducerHandleChanges, initializeTimes(today));
+  const [footerClass, setFooterClass] = useState('visible')
 
   useEffect(() => {
     if (state.reservaOk) {
@@ -50,6 +52,12 @@ function App() {
       navigate("/confirmedBooking");
     }
   }, [state.reservaOk, navigate]);
+
+  const location = useLocation();
+  useEffect(() => {
+    console.log(location)
+    setFooterClass(location.pathname === '/' ? 'visible' : 'no-visible' )
+  }, [location]);
 
   return (
     <><Header />
@@ -59,13 +67,13 @@ function App() {
       <Route path="/reserva" element={
           <BookingPage 
             freeTimes={ state.freeTimes }
-            handleChanges={(e) => handleChanges}
+            handleChanges={(e) => handleChanges(e)}
           />
         }
         />
       <Route path="/confirmedBooking" element={<ConfirmedBooking  reserva={ state.reserva } />}/>
     </Routes>
-    <Footer /></>
+    <Footer className={footerClass} /></>
   )
 }
 

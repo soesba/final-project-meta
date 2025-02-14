@@ -1,6 +1,7 @@
 import 'assets/styles/header.css'
 
-import Nav from './Nav';
+import MenuMobile from 'components/MenuMobile';
+import Menu from 'components/Menu';
 
 function Header() {
   return (
@@ -10,8 +11,8 @@ function Header() {
           <img id="logo" alt="logo"></img>
         </div>
         <div className='wrapper-menu'>
-          <Nav />
-          <img id="icon_menu" alt="menu"></img>
+          <Menu />
+          <MenuMobile></MenuMobile>
         </div>
       </div>
     </header>

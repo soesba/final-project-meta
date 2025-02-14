@@ -7,7 +7,7 @@ const BookingPage =  ({ freeTimes, handleChanges }) => {
       <div className='container'>
         <BookingForm
           freeTimes={freeTimes} 
-          handleChanges={(e) => handleChanges}></BookingForm>
+          handleChanges={(e) => handleChanges(e)}></BookingForm>
       </div>
     </section>
   )

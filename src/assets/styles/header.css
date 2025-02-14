@@ -16,19 +16,13 @@ header {
     
     .wrapper-menu {
       justify-self: flex-end;
-      #icon_menu {
-        display: none;    
-        content: url('assets/images/icon_hamburger_menu.svg');
-      }
-
-      nav {
+      nav.nav-desktop {
         ul {
           justify-content: space-around;
-          a {
-            font-weight: 700;
-            font-size: 16px;
-          }
         }
+      }
+      nav#nav-mobile {
+        display: none;
       }
     }
   }
@@ -36,15 +30,15 @@ header {
 
 @media (max-width: 750px) {
   header {
-    .container {
+    .container{
       .wrapper-menu {
-        #icon_menu {
+        nav.nav-desktop {
+          display: none;
+        }
+        nav#nav-mobile {
           display: flex;
           justify-self: flex-end;
           align-self: center;
-        }
-        nav {
-          display: none;
         }
       }
     }

@@ -18,3 +18,9 @@ section .container {
   max-width: 1160px;
 }
 
+.container {
+  min-height: -webkit-fill-available;
+  margin: 0 auto;
+  max-width: 1160px;
+
+}

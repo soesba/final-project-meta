@@ -1,11 +1,12 @@
 import 'assets/styles/footer.css';
+import PropTypes from 'prop-types';
 
-function Footer () {
+function Footer ({ className}) {
   return (
-    <footer>
+    <footer className={className}>
       <div className='container'>
         <img id="logo" alt="logo"></img>
-        <nav>
+        <nav id="navigation-section">
           <label className="card-title">Doormat navigation</label>
           <ul>
             <li><a href='pages/Inicio'>Inicio</a></li>
@@ -16,7 +17,7 @@ function Footer () {
             <li><a href='pages/IniciarSesion'>Iniciar sesión</a></li>
           </ul>
         </nav>
-        <nav>
+        <nav id="contact-section">
           <label className="card-title">Contact</label>
           <ul>
             <li>123 Ford Blvd, Chicago, IL, 60618</li>
@@ -24,7 +25,7 @@ function Footer () {
             <li>info@littlelemon.com</li>
           </ul>
         </nav>
-        <nav>
+        <nav id="social-section">
           <label className="card-title">Social media links</label>
           <ul>
             <li>Instagram</li>
@@ -36,5 +37,10 @@ function Footer () {
     </footer>
   );
 }
+
+Footer.propTypes = {
+  className: PropTypes.string
+}
+
 
 export default Footer;

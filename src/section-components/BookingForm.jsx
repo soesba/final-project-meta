@@ -4,7 +4,6 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const BookingForm = ({ freeTimes, handleChanges }) => {
-  console.log('LOG~ ~ BookingForm ~ freeTimes, handleChanges:', freeTimes, handleChanges)
   const today = Intl.DateTimeFormat('en-CA', {formatString: 'yyyy-mm-dd'}).format(new Date())
   const [time, setTime] = useState("0");
   const [guestNo, setGuestNo] = useState("1"); 
@@ -57,7 +56,7 @@ const BookingForm = ({ freeTimes, handleChanges }) => {
       comensales: guestNo,
       ocasion: resOccasion.options[resOccasion.selectedIndex].text
     }
-    // console.log(reserva)
+    console.log(reserva)
     handleChanges({ type: 'reservar', reserva: reserva })
   }
 
